@@ -1,11 +1,3 @@
-//
-//  XCFTask.swift
-//  XCFormat
-//
-//  Created by Steven Mok on 2018/8/1.
-//  Copyright © 2018年 sugarmo. All rights reserved.
-//
-
 import Foundation
 import ObjectiveC.runtime
 
@@ -22,34 +14,34 @@ extension Process {
     typealias TerminateBlock = (_ terminationStatus: Int32) -> Void
 
     func standardInputHandle() -> FileHandle? {
-        return handleFor(object: standardInput, write: false)
+        handleFor(object: standardInput, write: false)
     }
 
     func standardOutputHandle() -> FileHandle? {
-        return handleFor(object: standardOutput, write: false)
+        handleFor(object: standardOutput, write: false)
     }
 
     func standardErrorHandle() -> FileHandle? {
-        return handleFor(object: standardError, write: false)
+        handleFor(object: standardError, write: false)
     }
 
     private func handleFor(object: Any?, write: Bool) -> FileHandle? {
         if let fileHandle = object as? FileHandle {
-            return fileHandle
+            fileHandle
         } else if let pipe = object as? Pipe {
-            return write ? pipe.fileHandleForWriting : pipe.fileHandleForReading
+            write ? pipe.fileHandleForWriting : pipe.fileHandleForReading
         } else {
-            return nil
+            nil
         }
     }
 
     func addTerminateBlock(_ block: @escaping TerminateBlock) {
-        self.assistant.terminateBlocks.append(block)
+        assistant.terminateBlocks.append(block)
     }
 
     var terminateBlocks: [TerminateBlock] {
         get {
-            return assistant.terminateBlocks
+            assistant.terminateBlocks
         }
         set {
             assistant.terminateBlocks = newValue
@@ -58,7 +50,7 @@ extension Process {
 
     var outputBlock: OutputBlock? {
         get {
-            return assistant.outputBlock
+            assistant.outputBlock
         }
         set {
             assistant.outputBlock = newValue
@@ -76,7 +68,12 @@ extension Process {
             return newAssit
         }
         set {
-            objc_setAssociatedObject(self, &taskAssitantTypeKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(
+                self,
+                &taskAssitantTypeKey,
+                newValue,
+                .OBJC_ASSOCIATION_RETAIN_NONATOMIC
+            )
         }
     }
 
@@ -107,17 +104,32 @@ private class TaskAssistant: NSObject {
         self.task = task
         super.init()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(taskDidTerminate(_:)), name: Process.didTerminateNotification, object: task)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(taskDidTerminate(_:)),
+            name: Process.didTerminateNotification,
+            object: task
+        )
 
         if let stdoutHandle = task.standardOutputHandle() {
-            NotificationCenter.default.addObserver(self, selector: #selector(stdoutNotifyInProcess(_:)), name: FileHandle.readCompletionNotification, object: stdoutHandle)
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(stdoutNotifyInProcess(_:)),
+                name: FileHandle.readCompletionNotification,
+                object: stdoutHandle
+            )
 
-            NotificationCenter.default.addObserver(self, selector: #selector(stdoutNotify(_:)), name: .NSFileHandleReadToEndOfFileCompletion, object: stdoutHandle)
+            NotificationCenter.default.addObserver(
+                self,
+                selector: #selector(stdoutNotify(_:)),
+                name: .NSFileHandleReadToEndOfFileCompletion,
+                object: stdoutHandle
+            )
         }
     }
 
     func noticeTerminate() {
-        if let terminationStatus = self.task?.terminationStatus {
+        if let terminationStatus = task?.terminationStatus {
             DispatchQueue.main.async {
                 if self.terminateBlocks.count > 0 {
                     for block in self.terminateBlocks {

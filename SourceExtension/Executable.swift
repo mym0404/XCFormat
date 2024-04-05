@@ -1,11 +1,3 @@
-//
-//  SwiftFormat.swift
-//  SourceExtension
-//
-//  Created by Steven Mok on 2019/7/12.
-//  Copyright © 2019 sugarmo. All rights reserved.
-//
-
 import Cocoa
 
 protocol Executable {
@@ -26,7 +18,8 @@ protocol Executable {
 
 extension Executable {
     //    static func makeAppSupportDirectoryPath() -> String? {
-    //        if let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory, .userDomainMask, true).first {
+    //        if let path = NSSearchPathForDirectoriesInDomains(.applicationSupportDirectory,
+    //        .userDomainMask, true).first {
     //            return path
     //        }
     //        return nil
@@ -41,7 +34,11 @@ extension Executable {
 
         if createIfAbsent, !FileManager.default.fileExists(atPath: path) {
             do {
-                try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
+                try FileManager.default.createDirectory(
+                    atPath: path,
+                    withIntermediateDirectories: true,
+                    attributes: nil
+                )
             } catch {
                 return nil
             }
@@ -55,7 +52,8 @@ extension Executable {
     }
 
     static func userConfigPath(createDirectoryIfAbsent: Bool = false) -> String? {
-        userConfigsDirectory(createIfAbsent: createDirectoryIfAbsent)?.bridged.appendingPathComponent(configName)
+        userConfigsDirectory(createIfAbsent: createDirectoryIfAbsent)?.bridged
+            .appendingPathComponent(configName)
     }
 
     static func docPath() -> String? {

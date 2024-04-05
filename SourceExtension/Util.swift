@@ -1,16 +1,8 @@
-//
-//  NativeSwiftFormatter.swift
-//  SourceExtension
-//
-//  Created by Steven Mok on 2019/4/25.
-//  Copyright © 2019 sugarmo. All rights reserved.
-//
-
 import Cocoa
 
 extension String {
     var bridged: NSString {
-        return self as NSString
+        self as NSString
     }
 
     var fileExisting: String? {
