@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,14 +31,14 @@
 		B0A293AD1DAF64F700CF98C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AC1DAF64F700CF98C4 /* Assets.xcassets */; };
 		B0A293B01DAF64F700CF98C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0A293AE1DAF64F700CF98C4 /* Main.storyboard */; };
 		B0A293BE1DAF650C00CF98C4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0A293BD1DAF650C00CF98C4 /* Cocoa.framework */; };
-		B0A293CB1DAF650C00CF98C4 /* SourceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B0A293BB1DAF650C00CF98C4 /* SourceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B0A293CB1DAF650C00CF98C4 /* SourceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B0A293BB1DAF650C00CF98C4 /* SourceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B0AABFF72567B3020023FE00 /* swiftformat.yaml in Resources */ = {isa = PBXBuildFile; fileRef = B0AABFF42567B1810023FE00 /* swiftformat.yaml */; };
 		B0AABFF92567B3020023FE00 /* swiftformat.yaml in Resources */ = {isa = PBXBuildFile; fileRef = B0AABFF42567B1810023FE00 /* swiftformat.yaml */; };
 		B0AFE3A42567707500AC4921 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B0AFE3A32567707500AC4921 /* Yams */; };
 		B0AFE3A7256770A200AC4921 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B0AFE3A6256770A200AC4921 /* Yams */; };
 		B0B6CC6C22720DBD00BD940C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC6B22720DBD00BD940C /* Util.swift */; };
-		B0FD8AD024C2A6420063C930 /* uncrustify in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA0FF24C2190E00FABA63 /* uncrustify */; };
-		B0FD8AD124C2A6470063C930 /* swiftformat in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA04B24C218FF00FABA63 /* swiftformat */; };
+		B0FD8AD024C2A6420063C930 /* uncrustify in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA0FF24C2190E00FABA63 /* uncrustify */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B0FD8AD124C2A6470063C930 /* swiftformat in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA04B24C218FF00FABA63 /* swiftformat */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,15 +126,15 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0A293CF1DAF650C00CF98C4 /* Embed App Extensions */ = {
+		B0A293CF1DAF650C00CF98C4 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				B0A293CB1DAF650C00CF98C4 /* SourceExtension.appex in Embed App Extensions */,
+				B0A293CB1DAF650C00CF98C4 /* SourceExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		B0FD8ACF24C2A6390063C930 /* Copy CLI */ = {
@@ -341,7 +341,7 @@
 				B0A2939C1DAF64F700CF98C4 /* Sources */,
 				B0A2939D1DAF64F700CF98C4 /* Frameworks */,
 				B0A2939E1DAF64F700CF98C4 /* Resources */,
-				B0A293CF1DAF650C00CF98C4 /* Embed App Extensions */,
+				B0A293CF1DAF650C00CF98C4 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
@@ -387,8 +387,9 @@
 		B0A293981DAF64F700CF98C4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				CLASSPREFIX = "";
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = sugarmo;
 				TargetAttributes = {
 					B0A2939F1DAF64F700CF98C4 = {
@@ -405,7 +406,6 @@
 					};
 					B0A293BA1DAF650C00CF98C4 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = J2XWB65W94;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -543,7 +543,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Scripts/codesign-build.sh\" swiftformat\n\"${SRCROOT}/Scripts/codesign-build.sh\" uncrustify\n";
+			shellScript = "# \"${SRCROOT}/Scripts/codesign-build.sh\" swiftformat\n# \"${SRCROOT}/Scripts/codesign-build.sh\" uncrustify\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -637,6 +637,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -646,9 +647,11 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 22;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -663,7 +666,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -698,6 +701,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -707,9 +711,11 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 22;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -718,7 +724,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -737,13 +743,18 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = J2XWB65W94;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7U49RNK4H7;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XCFormat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = XCFormatMJ;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mjstudio.XCFormat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
@@ -761,13 +772,18 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = J2XWB65W94;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7U49RNK4H7;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = XCFormat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = XCFormatMJ;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mjstudio.XCFormat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Utilities/XCFormat-Bridging-Header.h";
@@ -780,14 +796,17 @@
 				CODE_SIGN_ENTITLEMENTS = SourceExtension/SourceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = J2XWB65W94;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7U49RNK4H7;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SourceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mjstudio.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -799,14 +818,17 @@
 				CODE_SIGN_ENTITLEMENTS = SourceExtension/SourceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = J2XWB65W94;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 7U49RNK4H7;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = SourceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.sugarmo.XCFormat.SourceExtension;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mjstudio.XCFormat.SourceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

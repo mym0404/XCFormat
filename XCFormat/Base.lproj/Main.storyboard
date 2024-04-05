@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
         <capability name="NSView safe area layout guides" minToolsVersion="12.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -129,27 +128,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <subviews>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="20" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gDc-FG-ZXb" userLabel="Root Stack View">
-                                <rect key="frame" x="40" y="40" width="565" height="502"/>
+                                <rect key="frame" x="40" y="152" width="565" height="390"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="B41-OJ-ARb">
-                                        <rect key="frame" x="-2" y="481" width="53" height="21"/>
-                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Usage" id="JSb-4j-RoX">
+                                        <rect key="frame" x="-2" y="369" width="303" height="21"/>
+                                        <textFieldCell key="cell" lineBreakMode="truncatingTail" title="Xcode Formatter modifed by MJ Studio" id="JSb-4j-RoX">
                                             <font key="font" textStyle="title2" name=".SFNS-Regular"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
                                     <textField horizontalHuggingPriority="1" verticalHuggingPriority="750" preferredMaxLayoutWidth="600" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-ZO-8hI">
-                                        <rect key="frame" x="-2" y="301" width="569" height="160"/>
+                                        <rect key="frame" x="-2" y="301" width="569" height="48"/>
                                         <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="left" id="YWM-yf-APr">
                                             <font key="font" metaFont="system"/>
-                                            <string key="title">XCFormat includes an Xcode Source Editor Extension. To enable it, please perform the following steps:
-
-1. Open "XCFormat" once.
-2. Open "System Preferences"
-3. Click "Extensions"
-4. Click "Xcode Source Editor"
-5. Enable "XCFormat"
+                                            <string key="title">Enable "XCFormat" in system settings extension.
 
 Then you can see the "XCFormat" menu under Xcode's "Editor" menu.</string>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
