@@ -51,6 +51,29 @@ extension Executable {
         Bundle.main.path(forResource: configName, ofType: nil)
     }
 
+    static func projectConfigPath(sourceFile: String) -> String? {
+        let path = URL(fileURLWithPath: "/Users/user/folder/subfolder")
+        return findFileInPath(
+            file: configName,
+            startPath: URL(filePath: sourceFile)
+        )
+    }
+
+    private static func findFileInPath(file: String, startPath: URL) -> String? {
+        var path = startPath
+
+        let fileManager = FileManager.default
+        while path.path != "/" {
+            let filePath = path.appendingPathComponent(file)
+            if fileManager.fileExists(atPath: filePath.path) {
+                return filePath.path
+            }
+            path.deleteLastPathComponent()
+        }
+
+        return nil
+    }
+
     static func userConfigPath(createDirectoryIfAbsent: Bool = false) -> String? {
         userConfigsDirectory(createIfAbsent: createDirectoryIfAbsent)?.bridged
             .appendingPathComponent(configName)
@@ -71,8 +94,13 @@ extension Executable {
         }
     }
 
-    static func prepareUserConfig() throws -> String {
-        guard let destination = userConfigPath(createDirectoryIfAbsent: true) else {
+    static func prepareUserConfig(sourceFile: String) throws -> String {
+        var dest = projectConfigPath(sourceFile: sourceFile)
+
+        if dest == nil {
+            dest = userConfigPath(createDirectoryIfAbsent: true)
+        }
+        guard let destination = dest else {
             throw FormatterError.failure(reason: "Config file not found.")
         }
 

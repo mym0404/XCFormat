@@ -49,7 +49,7 @@ enum Uncrustify: Executable {
             args.append("--frag")
         }
 
-        try args.append(contentsOf: ["-c", prepareUserConfig()])
+        try args.append(contentsOf: ["-c", prepareUserConfig(sourceFile: sourceFile)])
 
         args.append(sourceFile)
 

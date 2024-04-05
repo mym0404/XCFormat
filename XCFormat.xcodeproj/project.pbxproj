@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D1FA5AD2BC0837E005B79EA /* auto-codesign.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2D1FA5A72BC0837E005B79EA /* auto-codesign.sh */; };
+		2D1FA5AE2BC0837E005B79EA /* auto-uncodesign.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2D1FA5A82BC0837E005B79EA /* auto-uncodesign.sh */; };
+		2D1FA5AF2BC0837E005B79EA /* codesign-build.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2D1FA5A92BC0837E005B79EA /* codesign-build.sh */; };
+		2D1FA5B02BC0837E005B79EA /* codesign.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2D1FA5AA2BC0837E005B79EA /* codesign.sh */; };
+		2D1FA5B12BC0837E005B79EA /* uncodesign.sh in Resources */ = {isa = PBXBuildFile; fileRef = 2D1FA5AB2BC0837E005B79EA /* uncodesign.sh */; };
+		2DD0AB312BC085AE00C598BC /* uncrustify in Copy CLI */ = {isa = PBXBuildFile; fileRef = 2D1FA5B62BC0845C005B79EA /* uncrustify */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = B0287399209FF27C0093FE26 /* uncrustify.cfg */; };
 		B02E4FF92112D8FF004F0EA5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E4FF82112D8FF004F0EA5 /* AppDelegate.swift */; };
 		B02E50192112DA7A004F0EA5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02E50182112DA7A004F0EA5 /* MainViewController.swift */; };
@@ -33,22 +39,21 @@
 		B0AFE3A42567707500AC4921 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B0AFE3A32567707500AC4921 /* Yams */; };
 		B0AFE3A7256770A200AC4921 /* Yams in Frameworks */ = {isa = PBXBuildFile; productRef = B0AFE3A6256770A200AC4921 /* Yams */; };
 		B0B6CC6C22720DBD00BD940C /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B6CC6B22720DBD00BD940C /* Util.swift */; };
-		B0FD8AD024C2A6420063C930 /* uncrustify in Copy CLI */ = {isa = PBXBuildFile; fileRef = B04CA0FF24C2190E00FABA63 /* uncrustify */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		2DD0AB342BC0890500C598BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B0A293981DAF64F700CF98C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B0A293BA1DAF650C00CF98C4;
+			remoteInfo = SourceExtension;
+		};
 		B04CA0FE24C2190E00FABA63 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C6B323086BD345F297590A70;
-			remoteInfo = uncrustify;
-		};
-		B04CA10524C21A7500FABA63 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = D9441249A1784613BE627E4A;
 			remoteInfo = uncrustify;
 		};
 		B0A293C91DAF650C00CF98C4 /* PBXContainerItemProxy */ = {
@@ -85,11 +90,11 @@
 		};
 		B0FD8ACF24C2A6390063C930 /* Copy CLI */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				B0FD8AD024C2A6420063C930 /* uncrustify in Copy CLI */,
+				2DD0AB312BC085AE00C598BC /* uncrustify in Copy CLI */,
 			);
 			name = "Copy CLI";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,6 +102,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2D1FA5A72BC0837E005B79EA /* auto-codesign.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "auto-codesign.sh"; sourceTree = "<group>"; };
+		2D1FA5A82BC0837E005B79EA /* auto-uncodesign.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "auto-uncodesign.sh"; sourceTree = "<group>"; };
+		2D1FA5A92BC0837E005B79EA /* codesign-build.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = "codesign-build.sh"; sourceTree = "<group>"; };
+		2D1FA5AA2BC0837E005B79EA /* codesign.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = codesign.sh; sourceTree = "<group>"; };
+		2D1FA5AB2BC0837E005B79EA /* uncodesign.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = uncodesign.sh; sourceTree = "<group>"; };
+		2D1FA5B62BC0845C005B79EA /* uncrustify */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = uncrustify; sourceTree = "<group>"; };
 		B01536F92111C7F100F89B9A /* XCFormat-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XCFormat-Bridging-Header.h"; sourceTree = "<group>"; };
 		B01536FA2111C7F100F89B9A /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		B0287399209FF27C0093FE26 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
@@ -146,9 +157,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D1FA5AC2BC0837E005B79EA /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				2D1FA5A72BC0837E005B79EA /* auto-codesign.sh */,
+				2D1FA5A82BC0837E005B79EA /* auto-uncodesign.sh */,
+				2D1FA5A92BC0837E005B79EA /* codesign-build.sh */,
+				2D1FA5AA2BC0837E005B79EA /* codesign.sh */,
+				2D1FA5AB2BC0837E005B79EA /* uncodesign.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
 		B0287396209FF25F0093FE26 /* uncrustify */ = {
 			isa = PBXGroup;
 			children = (
+				2D1FA5B62BC0845C005B79EA /* uncrustify */,
 				B0287399209FF27C0093FE26 /* uncrustify.cfg */,
 				B04CA05024C2190E00FABA63 /* uncrustify.xcodeproj */,
 			);
@@ -176,6 +200,7 @@
 		B0A293971DAF64F700CF98C4 = {
 			isa = PBXGroup;
 			children = (
+				2D1FA5AC2BC0837E005B79EA /* Scripts */,
 				B07E41271DB08882008104EA /* Utilities */,
 				B0A293A21DAF64F700CF98C4 /* XCFormat */,
 				B0287396209FF25F0093FE26 /* uncrustify */,
@@ -265,6 +290,7 @@
 			);
 			dependencies = (
 				B0A293CA1DAF650C00CF98C4 /* PBXTargetDependency */,
+				2DD0AB352BC0890500C598BC /* PBXTargetDependency */,
 			);
 			name = XCFormat;
 			packageProductDependencies = (
@@ -288,7 +314,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B04CA10624C21A7500FABA63 /* PBXTargetDependency */,
 			);
 			name = SourceExtension;
 			packageProductDependencies = (
@@ -389,7 +414,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D1FA5B02BC0837E005B79EA /* codesign.sh in Resources */,
+				2D1FA5AE2BC0837E005B79EA /* auto-uncodesign.sh in Resources */,
 				B028739F209FF2C00093FE26 /* uncrustify.cfg in Resources */,
+				2D1FA5AD2BC0837E005B79EA /* auto-codesign.sh in Resources */,
+				2D1FA5AF2BC0837E005B79EA /* codesign-build.sh in Resources */,
+				2D1FA5B12BC0837E005B79EA /* uncodesign.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +428,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		B0FD8AD224C2C0C30063C930 /* Code Sign CLI */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -412,7 +443,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# \"${SRCROOT}/Scripts/codesign-build.sh\" swiftformat\n# \"${SRCROOT}/Scripts/codesign-build.sh\" uncrustify\n";
+			shellScript = "\"${SRCROOT}/Scripts/codesign-build.sh\" uncrustify\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -450,10 +481,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		B04CA10624C21A7500FABA63 /* PBXTargetDependency */ = {
+		2DD0AB352BC0890500C598BC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = uncrustify;
-			targetProxy = B04CA10524C21A7500FABA63 /* PBXContainerItemProxy */;
+			target = B0A293BA1DAF650C00CF98C4 /* SourceExtension */;
+			targetProxy = 2DD0AB342BC0890500C598BC /* PBXContainerItemProxy */;
 		};
 		B0A293CA1DAF650C00CF98C4 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -657,13 +688,16 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SourceExtension/SourceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7U49RNK4H7;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = SourceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/../../Frameworks",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
@@ -679,13 +713,16 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = SourceExtension/SourceExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 7U49RNK4H7;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = SourceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/../../Frameworks",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);

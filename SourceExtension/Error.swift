@@ -8,14 +8,9 @@ enum FormatterError: Error, LocalizedError, CustomNSError {
     var localizedDescription: String {
         switch self {
         case let .failure(reason):
-            return reason
+            reason
         case let .execError(print):
-            if print.contains(where: \.isNewline) {
-                os_log(.error, log: .default, "[XCFormat] exec error: %{public}@", print)
-                return "Error message is too long, please check the log in Console."
-            } else {
-                return print
-            }
+            print
         }
     }
 

@@ -1,7 +1,7 @@
 import Cocoa
 
 enum AppGroup {
-    static let sharedIdentifier = "J2XWB65W94.group.com.sugarmo.XCFormat"
+    static let sharedIdentifier = "7U49RNK4H7.group.com.mjstudio.XCFormat"
 
     static func makeRootPath() -> String? {
         FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: sharedIdentifier)?
